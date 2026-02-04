@@ -1,0 +1,66 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Book
+{
+private:
+    int bookId;
+    string title;
+    string author;
+    float price;
+
+public:
+    void inputDetails();
+    void showDetails();
+};
+
+// Input book details
+void Book::inputDetails()
+{
+    cout << "Enter Book ID: ";
+    cin >> bookId;
+    cin.ignore();
+
+    cout << "Enter Book Title: ";
+    getline(cin, title);
+
+    cout << "Enter Author Name: ";
+    getline(cin, author);
+
+    cout << "Enter Book Price: ";
+    cin >> price;
+}
+
+// Display book details
+void Book::showDetails()
+{
+    cout << "Book ID    : " << bookId << endl;
+    cout << "Title      : " << title << endl;
+    cout << "Author     : " << author << endl;
+    cout << "Price      : " << price << endl;
+    cout << "--------------------------" << endl;
+}
+
+int main()
+{
+    Book b[3];   // Array of objects for 3 books
+
+    // Input details
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "\nEnter details of Book " << i + 1 << endl;
+        b[i].inputDetails();
+    }
+
+    // Display details
+    cout << "\nBook Details\n";
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "\nDetails of Book " << i + 1 << endl;
+        b[i].showDetails();
+    }
+
+    return 0;
+}
+b
